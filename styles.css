@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;900&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: "monserrat", serif;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #46abf3;
+	box-shadow: 5px 5px 15px black;
+	color: white;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100px;
+	transition: top 0.25s ease;
+	z-index: 10;
+}
+
+nav ul {
+	display: flex;
+}
+
+nav li {
+	list-style: none;
+	padding: 0 20px;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+}
+
+header {
+	height: 100vh;
+	width: 100%;
+	font-family: "Ubuntu", sans-serif;
+	color: white;
+	margin: 0 auto;
+	background-color: #46abf3;
+}
+
+.background {
+	height: 100vh;
+	width: 100%;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+}
+
+#ground {
+	width: 100%;
+	height: 20%;
+	background: url("assets/ground.png") no-repeat;
+	background-size: cover;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+#slave {
+	width: 100px;
+	height: 20.5%;
+	background: url("assets/slave.png") no-repeat;
+	position: absolute;
+	bottom: 20%;
+	left: 30%;
+}
+
+#master {
+	width: 100px;
+	height: 20.5%;
+	background: url("assets/maitre.png") no-repeat;
+	position: absolute;
+	bottom: 20%;
+	right: 30%;
+}
+
+h1 {
+	margin: 0;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 5rem;
+	text-align: center;
+	font-family: "Anton", sans-serif;
+}
+
+section h2 {
+	padding-top: 20px;
+	font-size: 4rem;
+	text-align: center;
+	margin: 0;
+	font-family: "Anton", sans-serif;
+}
+
+section {
+	height: 100%;
+	background: #5a2303;
+	color: white;
+}
+
+.flex {
+	display: flex;
+	overflow-x: hidden;
+}
+
+.flex div {
+	padding: 15px;
+	position: relative;
+	top: 0;
+}
+
+.flex div p {
+	letter-spacing: 1.5;
+	text-align: justify;
+}
+
+#download {
+	background-color: #46abf3;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#download p {
+	margin: 30px 0;
+	max-width: 50%;
+	font-size: 1.1rem;
+	text-align: center;
+}
+
+.btn {
+	text-decoration: none;
+	font-size: 1.2rem;
+	color: white;
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 10px 20px;
+	transition: all 0.25s;
+}
+
+.btn:hover {
+	background-color: white;
+	color: #46abf3;
+}
+
+#team {
+}
+
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	padding: 100px;
+}
+
+.card {
+	background-color: white;
+	width: 300px;
+	padding: 30px;
+	margin: 30px;
+	border-radius: 30px;
+	color: #5a2303;
+	text-align: center;
+}
+
+.card img {
+	width: 100%;
+	border-radius: 100%;
+}
+
+.card h3 {
+	font-size: 1.5rem;
+	color: black;
+}
