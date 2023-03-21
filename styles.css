@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;900&family=Ubuntu&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500&display=swap");
 
 * {
 	scroll-behavior: smooth;
@@ -7,7 +8,7 @@
 
 body {
 	margin: 0;
-	font-family: "monserrat", serif;
+	font-family: Monserrat, Helvetica, sans-serif;
 }
 
 nav {
@@ -15,7 +16,7 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	background-color: #46abf3;
-	box-shadow: 5px 5px 15px black;
+	box-shadow: inset 0px -1px 0px #5a2303;
 	color: white;
 	position: fixed;
 	left: 0;
@@ -26,18 +27,35 @@ nav {
 	z-index: 10;
 }
 
-nav ul {
-	display: flex;
+.hamburger {
+	display: none;
 }
 
-nav li {
-	list-style: none;
-	padding: 0 20px;
-}
-
-nav a {
-	color: white;
+.navlinks-container a {
+	font-family: "Roboto Flex", sans-serif;
+	margin: 0 10px;
 	text-decoration: none;
+	color: white;
+	display: inline-block;
+	position: relative;
+	font-size: 18px;
+}
+
+.navlinks-container a::after {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -3%;
+	width: 100%;
+	height: 1px;
+	transform: scaleX(0);
+	transform-origin: left;
+	background: white;
+	transition: transform 0.3s ease-out;
+}
+
+.navlinks-container a:hover::after {
+	transform: scaleX(1);
 }
 
 header {
@@ -74,6 +92,7 @@ header {
 	height: 20.5%;
 	background: url("assets/slave.png") no-repeat;
 	position: absolute;
+	background-position: bottom;
 	bottom: 20%;
 	left: 30%;
 }
@@ -82,6 +101,7 @@ header {
 	width: 100px;
 	height: 20.5%;
 	background: url("assets/maitre.png") no-repeat;
+	background-position: bottom;
 	position: absolute;
 	bottom: 20%;
 	right: 30%;
@@ -126,6 +146,7 @@ section {
 .flex div p {
 	letter-spacing: 1.5;
 	text-align: justify;
+	max-width: 100%;
 }
 
 #download {
@@ -159,20 +180,18 @@ section {
 	color: #46abf3;
 }
 
-#team {
-}
-
 .flex-wrap {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	padding: 100px;
+	padding: 50px;
 }
 
 .card {
 	background-color: white;
-	width: 300px;
+	min-width: 250px;
+	max-width: 300px;
 	padding: 30px;
 	margin: 30px;
 	border-radius: 30px;
@@ -188,4 +207,83 @@ section {
 .card h3 {
 	font-size: 1.5rem;
 	color: black;
+}
+
+@media (max-width: 900px) {
+	nav {
+		box-shadow: none;
+	}
+
+	.hamburger {
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		border: none;
+		display: flex;
+		background-color: #46abf3;
+		align-items: center;
+		position: relative;
+	}
+
+	.hamburger span {
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: white;
+		position: absolute;
+		pointer-events: none;
+		transition: opacity 0.3s 0.15s ease-out;
+	}
+
+	.hamburger span:nth-child(1),
+	.hamburger span:nth-child(3) {
+		transition: transform 0.3s ease-out;
+	}
+
+	.hamburger.open span:nth-child(1) {
+		transform: translate(0) rotate(135deg);
+	}
+
+	.hamburger.open span:nth-child(2) {
+		opacity: 0;
+		transition: opacity 0s ease-in-out;
+	}
+
+	.hamburger.open span:nth-child(3) {
+		transform: translate(0) rotate(-135deg);
+	}
+
+	.hamburger span:nth-child(1) {
+		transform: translateY(7px);
+	}
+
+	.hamburger span:nth-child(3) {
+		transform: translateY(-7px);
+	}
+
+	.navlinks-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: absolute;
+		background-color: #46abf3;
+		top: 100%;
+		right: 0;
+		width: 100vw;
+		box-shadow: inset 0 -1px 0 #5a2303;
+		transform: translate(-100%);
+		z-index: -1;
+	}
+
+	.open {
+		transform: translate(0%);
+	}
+
+	.navlinks-container a {
+		margin: 10px 0;
+	}
+
+	.flex {
+		flex-direction: column;
+	}
 }
