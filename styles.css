@@ -89,7 +89,7 @@ header {
 
 #slave {
 	width: 100px;
-	height: 20.5%;
+	height: 25.5%;
 	background: url("assets/slave.png") no-repeat;
 	position: absolute;
 	background-position: bottom;
@@ -99,7 +99,7 @@ header {
 
 #master {
 	width: 100px;
-	height: 20.5%;
+	height: 25.5%;
 	background: url("assets/maitre.png") no-repeat;
 	background-position: bottom;
 	position: absolute;
@@ -207,6 +207,14 @@ section {
 .card h3 {
 	font-size: 1.5rem;
 	color: black;
+}
+
+#video {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100vh;
 }
 
 @media (max-width: 900px) {
